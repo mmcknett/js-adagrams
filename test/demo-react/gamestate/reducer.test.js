@@ -2,6 +2,7 @@ import { initialState, reducer } from 'demo-react/gamestate/reducer';
 import * as Actions from 'demo-react/gamestate/action-types';
 import makeAction from 'demo-react/gamestate/generic-action';
 import { ScreenId } from 'demo-react/gamestate/screens';
+import { mockPlayerList } from './mock-player-list';
 
 import Adagrams from 'demo-react/adagrams-proxy';
 
@@ -27,13 +28,6 @@ function assertSimpleActionUpdatesKey(actionType, keyName, value = 'any-value') 
 
   expect(actual).toEqual(expected);
 }
-
-const mockPlayerList = [
-  { name: 'Max', words: [['HELO', 'LOW'], ['WORLD']]},
-  { name: 'Min Soo', words: [[], ['OLE']]},
-  { name: 'Rupa', words: [['HELLO'], ['DROLL', 'ROLE']]},
-  { name: 'Elliot', words: [['DROOL'], ['WHORL']]}
-];
 
 const inGameState = {
   currentScreen: ScreenId.GAME,
